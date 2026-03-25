@@ -533,6 +533,28 @@ function goBack() {
   render();
 }
 
+// ── BACKEND SUBMISSION ────────────────────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycby7AyQCqLbjgpee-MhuVtNn3lkCP1Ciydl_Tanjns8oq1cbCENPVHAQ9NYB_YRJuf_L/exec';
+
+async function submitToSheet(answeredCount) {
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        track: track,
+        answers: answers,
+        xp: xp,
+        answered: answeredCount,
+        timestamp: new Date().toISOString()
+      })
+    });
+  } catch (e) {
+    console.warn('Submission error:', e);
+  }
+}
+
 // ── COMPLETION ────────────────────────────────────────────────────────────────
 function renderCompletion() {
   $('stepper').style.display = 'none';
@@ -542,6 +564,9 @@ function renderCompletion() {
     const v = answers[q.id];
     return v !== undefined && (q.type !== 'multi' || v.length > 0) && (q.type !== 'text' || (v && v.trim()));
   }).length;
+
+  // Send to Google Sheets
+  submitToSheet(answered);
 
   main().innerHTML = `
     <div class="q-card completion">
