@@ -29,7 +29,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-/* Animated BG */
 .bg-noise {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
@@ -42,7 +41,6 @@ body {
 @keyframes drift { 0%,100%{transform:translate(0,0)} 33%{transform:translate(15px,-20px)} 66%{transform:translate(-10px,15px)} }
 .wrap { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; padding: 48px 20px 100px; }
 
-/* Track selector */
 .track-selector {
   display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
   animation: fadeUp 0.5s ease both;
@@ -61,7 +59,6 @@ body {
 .track-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
 .track-time { font-size: 11px; color: var(--accent3); font-weight: 600; letter-spacing: 0.05em; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 100px; padding: 3px 10px; }
 
-/* Header */
 .header { text-align: center; margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
 .college-badge {
   display: inline-flex; align-items: center; gap: 8px;
@@ -78,7 +75,6 @@ h1 {
 }
 .intro-text { color: var(--soft); font-size: 14px; line-height: 1.7; max-width: 500px; margin: 0 auto; }
 
-/* XP HUD */
 .hud {
   display: flex; align-items: center; gap: 16px;
   background: var(--surface); border: 1px solid var(--border);
@@ -103,7 +99,6 @@ h1 {
 .xp-bar.student { background: linear-gradient(90deg, #1d4ed8, #60a5fa); box-shadow: 0 0 10px rgba(59,130,246,0.5); }
 .xp-bar.faculty { background: linear-gradient(90deg, #065f46, #34d399); box-shadow: 0 0 10px rgba(16,185,129,0.5); }
 
-/* Step dots */
 .stepper { display: flex; align-items: center; gap: 6px; margin-bottom: 28px; flex-wrap: wrap; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); transition: all 0.3s ease; flex-shrink: 0; }
 .dot.active { width: 20px; border-radius: 100px; }
@@ -119,7 +114,6 @@ h1 {
 .section-pill.student { background: rgba(59,130,246,0.12); color: #93c5fd; border: 1px solid rgba(59,130,246,0.2); }
 .section-pill.faculty { background: rgba(16,185,129,0.12); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.2); }
 
-/* Card */
 .q-card {
   background: var(--card); border: 1px solid var(--border);
   border-radius: 20px; padding: 32px;
@@ -137,7 +131,6 @@ h1 {
 .q-hint { font-size: 11px; color: var(--muted); margin-left: auto; font-style: italic; }
 .q-text { font-family: 'Clash Display', sans-serif; font-size: 19px; font-weight: 600; line-height: 1.35; margin-bottom: 22px; }
 
-/* Options */
 .opts { display: flex; flex-direction: column; gap: 9px; }
 .opt {
   display: flex; align-items: center; gap: 12px;
@@ -160,7 +153,6 @@ h1 {
 .opt-radio .opt-indicator { border-radius: 50%; }
 .opt-check .opt-indicator { border-radius: 4px; }
 
-/* Textarea */
 textarea {
   width: 100%; background: var(--surface); border: 2px solid var(--border);
   border-radius: 12px; padding: 14px 16px; color: var(--text);
@@ -170,7 +162,6 @@ textarea {
 textarea:focus { border-color: var(--accent); }
 textarea.faculty:focus { border-color: var(--accent2); }
 
-/* Nav */
 .nav { display: flex; gap: 10px; margin-top: 26px; }
 .btn-back {
   background: transparent; border: 2px solid var(--border); border-radius: 11px;
@@ -189,7 +180,6 @@ textarea.faculty:focus { border-color: var(--accent2); }
 .btn-next:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.1); }
 .btn-next:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
 
-/* Toast */
 .toast {
   position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px);
   border-radius: 100px; padding: 10px 22px; font-size: 13px; font-weight: 700;
@@ -200,7 +190,6 @@ textarea.faculty:focus { border-color: var(--accent2); }
 .toast.faculty-toast { background: #064e3b; border-color: rgba(16,185,129,0.4); color: #6ee7b7; }
 .toast.show { transform: translateX(-50%) translateY(0); }
 
-/* Completion */
 .completion { text-align: center; padding: 16px 0; }
 .trophy-wrap { font-size: 56px; margin-bottom: 16px; display: inline-block; animation: pop 0.5s cubic-bezier(0.34,1.56,0.64,1) both; }
 @keyframes pop { from{transform:scale(0)rotate(-15deg)} to{transform:scale(1)rotate(0)} }
@@ -218,11 +207,9 @@ textarea.faculty:focus { border-color: var(--accent2); }
 }
 .btn-restart:hover { border-color: var(--accent); color: var(--accent); }
 
-/* Confetti */
 .cf { position: fixed; width: 9px; height: 9px; pointer-events: none; z-index: 300; animation: cfFall 1.6s ease-in forwards; }
 @keyframes cfFall { 0%{transform:translateY(-10px)rotate(0deg);opacity:1} 100%{transform:translateY(100vh)rotate(720deg);opacity:0} }
 
-/* Badge Preview */
 .badge-preview { margin: 24px auto; max-width: 320px; }
 .badge-card {
   background: #46166b; border-radius: 20px; overflow: hidden;
@@ -307,125 +294,157 @@ textarea.faculty:focus { border-color: var(--accent2); }
 
 const STUDENT_Qs = [
   // Section 1 — About You
-  { id:'s_field', section:'About You', pts:10, type:'single', required:true,
-    text:'What is your primary field of study?',
-    opts:['STEM / Technical','Business or Professional Program','Public Policy / Public Affairs','Social Sciences or Humanities','Other'] },
-  { id:'s_level', section:'About You', pts:10, type:'single', required:true,
-    text:'What level are you?',
-    opts:['Undergraduate','Graduate'] },
+  {
+    id:'s_role', section:'About You', pts:10, type:'single', required:true,
+    text:'Which best describes you?',
+    opts:['UAlbany undergraduate student','UAlbany graduate student','UAlbany staff or administrator','Prospective student or other']
+  },
+  {
+    id:'s_field', section:'About You', pts:10, type:'single', required:true,
+    text:'What is your primary field of study or work?',
+    opts:['STEM / Technical','Business or Management','Public Policy / Government','Health Sciences','Social Sciences or Humanities','Education','Other']
+  },
 
-  // Section 2 — Current Experience
-  { id:'s_easy', section:'Current Experience', pts:15, type:'single', required:true,
-    text:'How easy is it currently to find AI-related courses at UAlbany?',
-    opts:['Very easy','Somewhat easy','Somewhat difficult','Very difficult'] },
-  { id:'s_missed', section:'Current Experience', pts:15, type:'single', required:true,
-    text:'Have you ever missed an AI-related course or event because you did not know it existed?',
-    opts:['Yes','No','Not sure'] },
+  // Section 2 — Finding AI Courses Today
+  {
+    id:'s_easy', section:'Finding AI Courses Today', pts:15, type:'single', required:true,
+    text:'How easy is it currently to find AI-related courses and programs at UAlbany?',
+    opts:['Very easy','Somewhat easy','Somewhat difficult','Very difficult','I haven\'t tried']
+  },
+  {
+    id:'s_missed', section:'Finding AI Courses Today', pts:15, type:'single', required:true,
+    text:'Have you ever missed an AI-related course or opportunity because you didn\'t know it existed?',
+    opts:['Yes','No','Not sure']
+  },
+  {
+    id:'s_confident', section:'Finding AI Courses Today', pts:15, type:'single', required:true,
+    text:'When searching for AI courses, how confident are you that you found all available options?',
+    opts:['Very confident','Somewhat confident','Not very confident','Not confident at all']
+  },
 
-  // Section 3 — Platform Scope & Content
-  { id:'s_platform_type', section:'Platform Scope & Content', pts:15, type:'single', required:true,
-    text:'What type of platform would be most useful to you?',
-    opts:['A simple page listing AI courses only','A hub with courses and events','A full platform (courses, events, research, internships, etc.)','Not sure'] },
-  { id:'s_content', section:'Platform Scope & Content', pts:15, type:'multi', max:3, required:true,
+  // Section 3 — Content Priorities
+  {
+    id:'s_content', section:'Content Priorities', pts:15, type:'multi', max:3, required:true,
     hint:'Select up to 3',
-    text:'What content should be included in the same platform?',
-    opts:['Courses','Events','Research opportunities','Internships / career opportunities','Faculty research','Microcredentials or certificates'] },
-  { id:'s_topics', section:'Platform Scope & Content', pts:10, type:'multi', max:99, required:true,
-    hint:'Select all that apply',
-    text:'Which of these AI-related topics interest you most?',
-    opts:['Artificial Intelligence (AI)','Machine Learning','Data Science / Analytics','AI Ethics & Policy','Automation / Algorithms','Not sure'] },
+    text:'If an AI Curriculum Navigator existed, what would matter most to you?',
+    opts:['Courses available this semester','Upcoming and future AI courses','AI-related events and webinars','Career and internship opportunities','Research opportunities','Microcredentials and certificates']
+  },
 
-  // Section 4 — Navigation & Search Behavior
-  { id:'s_search_first', section:'Navigation & Search', pts:15, type:'single', required:true,
-    text:'When you search for courses online, what do you usually do first?',
-    opts:['Use a search bar','Browse categories','Apply filters','Scroll and explore'] },
-  { id:'s_layout', section:'Navigation & Search', pts:15, type:'single', required:true,
-    text:'Which layout would feel easiest to use?',
-    opts:['Search bar at the top + filters on the side','Categories first (e.g., AI for business, policy, health)','Dashboard-style (separate sections like courses, events, research)','Simple list with minimal controls'] },
-
-  // Section 5 — Filters & Results Display
-  { id:'s_filters', section:'Filters & Results', pts:15, type:'multi', max:4, required:true,
-    hint:'Select up to 4',
-    text:'Which filters would you actually use?',
-    opts:['Skill level (beginner to advanced)','Application area (policy, business, health, etc.)','Department','Semester (Fall/Spring/etc.)','Course format (online/in-person)','Degree level (undergraduate/graduate)'] },
-  { id:'s_results_display', section:'Filters & Results', pts:15, type:'multi', max:2, required:true,
-    hint:'Select up to 2',
-    text:'When browsing results, what do you want to see first?',
-    opts:['Course title + short description','Tags (AI Ethics, ML, etc.)','Skill level','Department','Semester offered'] },
-
-  // Section 6 — Interface Design Preferences
-  { id:'s_interface_style', section:'Interface Design', pts:15, type:'single', required:true,
-    text:'Which interface style do you prefer?',
-    opts:['Simple and minimal (just search + basic filters)','Balanced (search, filters, and some additional information)','Rich interface (multiple sections, recommendations, insights)'] },
-  { id:'s_features', section:'Interface Design', pts:15, type:'multi', max:3, required:true,
+  // Section 4 — Interface Design
+  {
+    id:'s_search_first', section:'Interface Design', pts:15, type:'single', required:true,
+    text:'When you open a course discovery platform, what do you look for first?',
+    opts:['A search bar','Filter options (level, school, topic)','Featured or recommended items','Browse by topic or category','Browse by school or department']
+  },
+  {
+    id:'s_layout', section:'Interface Design', pts:15, type:'single', required:true,
+    text:'Which layout feels easier to browse?',
+    opts:['List view — one row per course with details visible','Grid view — card tiles you can scan quickly','No preference']
+  },
+  {
+    id:'s_filters', section:'Interface Design', pts:15, type:'multi', max:3, required:true,
     hint:'Select up to 3',
-    text:'Which features would make the platform easier to use?',
-    opts:['Clear filter panel','Search suggestions while typing','Ability to save/bookmark courses','Visual tags (color-coded topics)','Event calendar','AI chatbot assistance'] },
-  { id:'s_trust', section:'Interface Design', pts:15, type:'multi', max:2, required:true,
+    text:'Which filters would you actually use when searching for AI courses?',
+    opts:['Level (undergraduate / graduate)','School or college','Topic area (e.g. machine learning, AI ethics, data science)','Format (in-person / online / hybrid)','Term (fall, spring, self-paced)','Free or paid']
+  },
+  {
+    id:'s_card', section:'Interface Design', pts:15, type:'multi', max:2, required:true,
     hint:'Select up to 2',
-    text:'What makes you trust a platform like this?',
-    opts:['Official university branding','Links to original course pages','Up-to-date information','Simple and clean design'] },
+    text:'On a course listing, which details matter most to you?',
+    opts:['Course description','Prerequisites','Instructor name','Format and schedule','Topic tags','Link to official course listing']
+  },
 
-  // Section 7 — Final Input
-  { id:'s_must', section:'Final Input', pts:20, type:'text', required:false,
+  // Section 5 — Equity & Trust
+  {
+    id:'s_equity', section:'Equity & Trust', pts:15, type:'single', required:true,
+    text:'Do you feel AI-related courses and opportunities at UAlbany are equally visible across all majors and schools?',
+    opts:['Yes','Somewhat','No','Not sure']
+  },
+  {
+    id:'s_official', section:'Equity & Trust', pts:10, type:'single', required:true,
+    text:'How important is it that this platform is officially maintained by the university?',
+    opts:['Very important','Somewhat important','Not important']
+  },
+
+  // Section 6 — Open Feedback
+  {
+    id:'s_must', section:'Open Feedback', pts:20, type:'text', required:false,
     text:'What is the ONE thing this platform must have for you to actually use it?',
-    placeholder:'Be as specific as you like — your answer directly informs the design ✨' },
-  { id:'s_fix', section:'Final Input', pts:20, type:'text', required:false,
-    text:'If you could fix one problem with how courses are currently found at UAlbany, what would it be?',
-    placeholder:'Any frustration or suggestion is helpful…' },
+    placeholder:'Be as specific as you like — your answer directly informs the design ✨'
+  },
+  {
+    id:'s_benchmark', section:'Open Feedback', pts:20, type:'text', required:false,
+    text:'Have you seen another university website that made it easy to discover courses or programs? If yes, which one and what made it effective?',
+    placeholder:'Any example is helpful — big or small...'
+  },
 ];
 
 const FACULTY_Qs = [
-  // Section 1 — Context
-  { id:'f_college', section:'Context', pts:10, type:'single', required:true,
+  // Section 1 — About You
+  {
+    id:'f_college', section:'About You', pts:10, type:'single', required:true,
     text:'Which college or school are you affiliated with?',
-    opts:['College of Arts & Sciences (CAS)','Rockefeller College of Public Affairs & Policy','College of Emergency Preparedness, Homeland Security & Cybersecurity (CEHC)','School of Business','College of Education & Human Development','School of Public Health','College of Engineering & Applied Sciences','AI & Society College','Other'] },
-  { id:'f_teaches', section:'Context', pts:10, type:'single', required:true,
+    opts:['College of Arts & Sciences','College of Emergency Preparedness, Homeland Security and Cybersecurity (CEHC)','College of Integrated Health Sciences','College of Nanotechnology, Science, and Engineering (CNSE)','Rockefeller College of Public Affairs & Policy','Massry School of Business','School of Criminal Justice','School of Education','School of Social Welfare']
+  },
+  {
+    id:'f_teaches', section:'About You', pts:10, type:'single', required:true,
     text:'Do you currently teach, research, or supervise work related to AI, data science, or computational methods?',
-    opts:['Yes','No','Occasionally'] },
+    opts:['Yes','Occasionally','No']
+  },
 
-  // Section 2 — Definition & Scope
-  { id:'f_define', section:'Definition & Scope', pts:20, type:'text', required:false,
-    text:'In your discipline, what qualifies a course as "AI-related"?',
-    placeholder:'Your definition from your disciplinary perspective…' },
-  { id:'f_own', section:'Definition & Scope', pts:10, type:'single', required:true,
-    text:'Would you consider any of your courses AI-related?',
-    opts:['Yes','No','Possibly'] },
-  { id:'f_teaching_now', section:'Definition & Scope', pts:10, type:'single', required:true,
-    text:'Are you currently teaching a course that includes AI-related content?',
-    opts:['Yes','No','Planning to'] },
-  { id:'f_broad', section:'Definition & Scope', pts:15, type:'single', required:true,
+  // Section 2 — Scope & Definition
+  {
+    id:'f_own', section:'Scope & Definition', pts:15, type:'single', required:true,
+    text:'Would you consider any of your current courses AI-related?',
+    opts:['Yes','Possibly','No']
+  },
+  {
+    id:'f_broad', section:'Scope & Definition', pts:15, type:'single', required:true,
     text:'How broad should the definition of "AI-related" be for a university-wide hub?',
-    opts:['Strictly technical AI and machine learning','Technical plus applied AI in specific domains','Include AI ethics, governance, and societal impacts','Broad definition including data analytics and automation'] },
+    opts:['Strictly technical — AI and machine learning only','Technical plus applied AI in specific domains','Include AI ethics, governance, and societal impacts','Broad — include data analytics and automation too']
+  },
 
-  // Section 3 — Classification & Governance
-  { id:'f_identify', section:'Classification & Governance', pts:15, type:'single', required:true,
-    text:'How should AI-related courses be identified for inclusion?',
-    opts:['Faculty self-identification','Administrative review','Automated keyword detection','Hybrid approach'] },
-  { id:'f_maintain', section:'Classification & Governance', pts:15, type:'single', required:true,
-    text:'Who should be responsible for maintaining the accuracy of AI course listings?',
-    opts:['Individual faculty','Department administration','AI & Society College','Central IT / Communications','Shared responsibility'] },
-  { id:'f_change_freq', section:'Classification & Governance', pts:10, type:'single', required:true,
-    text:'How often does your AI-related course content typically change?',
-    opts:['Every semester','Once a year','Rarely','Not applicable'] },
+  // Section 3 — Governance & Sustainability
+  {
+    id:'f_identify', section:'Governance & Sustainability', pts:15, type:'single', required:true,
+    text:'How should AI-related courses be identified for inclusion in the navigator?',
+    opts:['Faculty self-identification','Administrative review','Automated keyword detection','A hybrid of the above']
+  },
+  {
+    id:'f_maintain', section:'Governance & Sustainability', pts:15, type:'single', required:true,
+    text:'Who should be responsible for keeping AI course listings accurate over time?',
+    opts:['Individual faculty','Department administration','AI & Society College','Central IT or Communications','Shared responsibility across all of the above']
+  },
+  {
+    id:'f_submit', section:'Governance & Sustainability', pts:15, type:'single', required:true,
+    text:'Would you be willing to submit or update your own course listing directly on the platform if that feature existed?',
+    opts:['Yes','Possibly','No']
+  },
 
-  // Section 4 — Value, Display & Concerns
-  { id:'f_visibility', section:'Value, Display & Concerns', pts:15, type:'single', required:true,
-    text:'Would inclusion in an official AI hub increase visibility or enrollment for your course?',
-    opts:['Yes','No','Unsure'] },
-  { id:'f_new_course', section:'Value, Display & Concerns', pts:10, type:'single', required:true,
-    text:'Would you be interested in developing a new AI-related course for your discipline?',
-    opts:['Yes','Possibly','No'] },
-  { id:'f_display', section:'Value, Display & Concerns', pts:15, type:'multi', max:2, required:true,
+  // Section 4 — Value & Display
+  {
+    id:'f_visibility', section:'Value & Display', pts:15, type:'single', required:true,
+    text:'Would being listed in an official AI hub increase visibility or enrollment for your course?',
+    opts:['Yes','Unsure','No']
+  },
+  {
+    id:'f_display', section:'Value & Display', pts:15, type:'multi', max:2, required:true,
     hint:'Select up to 2',
-    text:'How should your course information be displayed on the platform?',
-    opts:['Course title and short description only','Tags showing AI topics covered (e.g., ML, AI Ethics, Data Science)','Application area (e.g., AI for policy, health, business)','Skill level and prerequisites','Link to full course page only'] },
-  { id:'f_concerns', section:'Value, Display & Concerns', pts:20, type:'text', required:false,
-    text:'Do you have concerns about centralized AI labeling of courses?',
-    placeholder:'Share any concerns — governance, accuracy, scope…' },
-  { id:'f_value', section:'Value, Display & Concerns', pts:20, type:'text', required:false,
-    text:'What would make an AI discovery hub genuinely valuable from a faculty perspective?',
-    placeholder:'Your perspective directly informs design decisions…' },
+    text:'How should your course be displayed on the platform?',
+    opts:['Course title and short description','AI topic tags (e.g. machine learning, AI ethics, data science)','Application area (e.g. AI for policy, health, business)','Skill level and prerequisites','Link to full course page only']
+  },
+
+  // Section 5 — Open Feedback
+  {
+    id:'f_value', section:'Open Feedback', pts:20, type:'text', required:false,
+    text:'What would make the AI Curriculum Navigator genuinely useful from a faculty perspective?',
+    placeholder:'Your perspective directly informs design decisions...'
+  },
+  {
+    id:'f_concerns', section:'Open Feedback', pts:20, type:'text', required:false,
+    text:'Do you have any concerns about centralized AI labeling of courses? If yes, please share.',
+    placeholder:'Share any concerns — governance, accuracy, scope...'
+  },
 ];
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
@@ -497,15 +516,15 @@ function renderTrackSelect() {
     <div class="track-selector">
       <div class="track-card student" onclick="chooseTrack('student')">
         <div class="track-icon">🎓</div>
-        <div class="track-title">I'm a Student</div>
-        <div class="track-desc">Undergraduate or graduate student</div>
-        <div class="track-time">~4–5 min · 16 questions</div>
+        <div class="track-title">I'm a Student or Staff</div>
+        <div class="track-desc">Student, administrator, advisor, or staff member</div>
+        <div class="track-time">~4 min · 14 questions</div>
       </div>
       <div class="track-card faculty" onclick="chooseTrack('faculty')">
         <div class="track-icon">🔬</div>
-        <div class="track-title">I'm Faculty or Staff</div>
-        <div class="track-desc">Teaching, researching, or supporting academic programs</div>
-        <div class="track-time">~4–5 min · 14 questions</div>
+        <div class="track-title">I'm Faculty</div>
+        <div class="track-desc">Teaching, researching, or supervising AI-related work</div>
+        <div class="track-time">~3 min · 11 questions</div>
       </div>
     </div>`;
 }
@@ -700,18 +719,16 @@ function renderCompletion() {
   $('xp-bar').style.width = '100%';
 }
 
-// ── BADGE DOWNLOAD (Canvas → PNG) ────────────────────────────────────────────
+// ── BADGE DOWNLOAD ────────────────────────────────────────────────────────────
 async function downloadBadge() {
   const W = 1080, H = 1920;
   const c = document.createElement('canvas');
   c.width = W; c.height = H;
   const ctx = c.getContext('2d');
 
-  // Background — UAlbany Purple
   ctx.fillStyle = '#46166b';
   ctx.fillRect(0, 0, W, H);
 
-  // Chevron decorations
   ctx.strokeStyle = 'rgba(238,178,17,0.12)';
   ctx.lineWidth = 60;
   ctx.beginPath(); ctx.moveTo(100, 400); ctx.lineTo(540, 200); ctx.lineTo(100, 0); ctx.stroke();
@@ -721,17 +738,14 @@ async function downloadBadge() {
   ctx.beginPath(); ctx.moveTo(200, 500); ctx.lineTo(540, 340); ctx.lineTo(200, 180); ctx.stroke();
   ctx.beginPath(); ctx.moveTo(880, 1400); ctx.lineTo(540, 1560); ctx.lineTo(880, 1720); ctx.stroke();
 
-  // Load Damien image
   const tier = getDamienTier(xp, totalXP);
   const img = new Image();
   img.crossOrigin = 'anonymous';
 
   const drawContent = () => {
-    // Damien image — centered
     const imgSize = 320;
     const imgX = (W - imgSize) / 2;
     const imgY = 340;
-    // Circular clip for Damien
     ctx.save();
     ctx.beginPath();
     ctx.arc(imgX + imgSize/2, imgY + imgSize/2, imgSize/2, 0, Math.PI * 2);
@@ -741,14 +755,12 @@ async function downloadBadge() {
     ctx.clip();
     ctx.drawImage(img, imgX, imgY, imgSize, imgSize);
     ctx.restore();
-    // Gold ring
     ctx.strokeStyle = '#eeb211';
     ctx.lineWidth = 6;
     ctx.beginPath();
     ctx.arc(imgX + imgSize/2, imgY + imgSize/2, imgSize/2 + 4, 0, Math.PI * 2);
     ctx.stroke();
 
-    // Tier badge pill
     ctx.fillStyle = '#eeb211';
     const pillW = 260, pillH = 50, pillX = (W - pillW)/2, pillY = imgY + imgSize + 30;
     roundRect(ctx, pillX, pillY, pillW, pillH, 25);
@@ -758,39 +770,32 @@ async function downloadBadge() {
     ctx.textAlign = 'center';
     ctx.fillText(tier.label + ' TIER', W/2, pillY + 33);
 
-    // Stars
     ctx.font = '36px Arial';
     ctx.fillStyle = '#eeb211';
     const stars = '★'.repeat(tier.tier) + '☆'.repeat(3 - tier.tier);
     ctx.fillText(stars, W/2, pillY + pillH + 55);
 
-    // XP
     ctx.font = 'bold 96px "DM Sans", Arial, sans-serif';
     ctx.fillStyle = '#eeb211';
     ctx.fillText(xp + ' XP', W/2, 920);
 
-    // Title
     ctx.font = 'bold 44px "DM Sans", Arial, sans-serif';
     ctx.fillStyle = '#ffffff';
     ctx.fillText('AI Navigator', W/2, 1020);
     ctx.fillText('Design Contributor', W/2, 1075);
 
-    // Divider
     ctx.strokeStyle = 'rgba(238,178,17,0.4)';
     ctx.lineWidth = 2;
     ctx.beginPath(); ctx.moveTo(340, 1120); ctx.lineTo(740, 1120); ctx.stroke();
 
-    // Message
     ctx.font = '28px "DM Sans", Arial, sans-serif';
     ctx.fillStyle = '#a2aaad';
     ctx.fillText(tier.msg, W/2, 1175);
 
-    // Unleash Greatness
     ctx.font = 'bold 38px "DM Sans", Arial, sans-serif';
     ctx.fillStyle = '#eeb211';
     ctx.fillText('UNLEASH GREATNESS', W/2, 1300);
 
-    // Footer
     ctx.font = '22px "DM Sans", Arial, sans-serif';
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.fillText('AI & Society College · University at Albany', W/2, 1750);
@@ -798,74 +803,36 @@ async function downloadBadge() {
     ctx.fillStyle = 'rgba(255,255,255,0.3)';
     ctx.fillText('ualbany.edu/ai-plus', W/2, 1790);
 
-    // Download
-    const link = document.createElement('a');
-    link.download = 'UAlbany-AI-Navigator-Badge.png';
-    link.href = c.toDataURL('image/png');
-    link.click();
+    const dataURL = c.toDataURL('image/png');
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      // Mobile: open image in new tab — user presses & holds to save to Photos
+      const win = window.open('', '_blank');
+      win.document.write(`
+        <html><head><title>Your UAlbany AI Badge</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style>
+          body{margin:0;background:#05080f;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;font-family:sans-serif;}
+          img{max-width:100%;border-radius:16px;}
+          p{color:#94a3b8;font-size:14px;margin-top:16px;text-align:center;padding:0 20px;}
+          strong{color:#eeb211;}
+        </style></head>
+        <body>
+          <img src="${dataURL}" alt="Your UAlbany AI Navigator Badge">
+          <p><strong>Press and hold the image → Save to Photos</strong><br>then share to your Instagram Story!</p>
+        </body></html>`);
+      win.document.close();
+    } else {
+      // Desktop: trigger normal download
+      const link = document.createElement('a');
+      link.download = 'UAlbany-AI-Navigator-Badge.png';
+      link.href = dataURL;
+      link.click();
+    }
   };
 
   img.onload = drawContent;
-  img.onerror = () => {
-    // If image fails to load (CORS), draw without it
-    drawContent = () => {
-      // Fallback: just draw a gold circle with paw emoji
-      ctx.fillStyle = '#eeb211';
-      ctx.beginPath();
-      ctx.arc(W/2, 500, 160, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.font = '120px Arial';
-      ctx.textAlign = 'center';
-      ctx.fillText('🐾', W/2, 545);
-
-      ctx.fillStyle = '#eeb211';
-      const pillW = 260, pillH = 50, pillX = (W - pillW)/2, pillY = 700;
-      roundRect(ctx, pillX, pillY, pillW, pillH, 25);
-      ctx.fill();
-      ctx.fillStyle = '#46166b';
-      ctx.font = 'bold 22px Arial, sans-serif';
-      ctx.fillText(tier.label + ' TIER', W/2, pillY + 33);
-
-      ctx.font = '36px Arial';
-      ctx.fillStyle = '#eeb211';
-      const stars = '★'.repeat(tier.tier) + '☆'.repeat(3 - tier.tier);
-      ctx.fillText(stars, W/2, pillY + pillH + 55);
-
-      ctx.font = 'bold 96px Arial, sans-serif';
-      ctx.fillStyle = '#eeb211';
-      ctx.fillText(xp + ' XP', W/2, 920);
-
-      ctx.font = 'bold 44px Arial, sans-serif';
-      ctx.fillStyle = '#ffffff';
-      ctx.fillText('AI Navigator', W/2, 1020);
-      ctx.fillText('Design Contributor', W/2, 1075);
-
-      ctx.strokeStyle = 'rgba(238,178,17,0.4)';
-      ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.moveTo(340, 1120); ctx.lineTo(740, 1120); ctx.stroke();
-
-      ctx.font = '28px Arial, sans-serif';
-      ctx.fillStyle = '#a2aaad';
-      ctx.fillText(tier.msg, W/2, 1175);
-
-      ctx.font = 'bold 38px Arial, sans-serif';
-      ctx.fillStyle = '#eeb211';
-      ctx.fillText('UNLEASH GREATNESS', W/2, 1300);
-
-      ctx.font = '22px Arial, sans-serif';
-      ctx.fillStyle = 'rgba(255,255,255,0.5)';
-      ctx.fillText('AI & Society College · University at Albany', W/2, 1750);
-      ctx.font = '18px Arial, sans-serif';
-      ctx.fillStyle = 'rgba(255,255,255,0.3)';
-      ctx.fillText('ualbany.edu/ai-plus', W/2, 1790);
-
-      const link = document.createElement('a');
-      link.download = 'UAlbany-AI-Navigator-Badge.png';
-      link.href = c.toDataURL('image/png');
-      link.click();
-    };
-    drawContent();
-  };
+  img.onerror = drawContent;
   img.src = 'UAlbany_PrimaryMark_FullColor_NoOutline.jpg';
 }
 
