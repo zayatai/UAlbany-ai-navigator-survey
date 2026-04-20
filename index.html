@@ -806,22 +806,22 @@ async function downloadBadge() {
     const dataURL = c.toDataURL('image/png');
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-      // Mobile: open image in new tab — user presses & holds to save to Photos
-      const win = window.open('', '_blank');
-      win.document.write(`
-        <html><head><title>Your UAlbany AI Badge</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <style>
-          body{margin:0;background:#05080f;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;font-family:sans-serif;}
-          img{max-width:100%;border-radius:16px;}
-          p{color:#94a3b8;font-size:14px;margin-top:16px;text-align:center;padding:0 20px;}
-          strong{color:#eeb211;}
-        </style></head>
-        <body>
-          <img src="${dataURL}" alt="Your UAlbany AI Navigator Badge">
-          <p><strong>Press and hold the image → Save to Photos</strong><br>then share to your Instagram Story!</p>
-        </body></html>`);
-      win.document.close();
+      // Mobile: replace button with inline image + instructions
+      const btn = document.querySelector('.btn-share');
+      if (btn) {
+        const wrapper = document.createElement('div');
+        wrapper.style.cssText = 'margin:16px 0;text-align:center;';
+        const savedImg = document.createElement('img');
+        savedImg.src = dataURL;
+        savedImg.style.cssText = 'max-width:100%;border-radius:16px;display:block;margin:0 auto;';
+        savedImg.alt = 'Your UAlbany AI Navigator Badge';
+        const instructions = document.createElement('p');
+        instructions.style.cssText = 'color:#eeb211;font-size:13px;font-weight:700;margin-top:12px;line-height:1.6;';
+        instructions.textContent = '👆 Press and hold the image above → Save to Photos → share to your Instagram Story!';
+        wrapper.appendChild(savedImg);
+        wrapper.appendChild(instructions);
+        btn.replaceWith(wrapper);
+      }
     } else {
       // Desktop: trigger normal download
       const link = document.createElement('a');
